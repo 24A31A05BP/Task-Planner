@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Student To-Do Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header>
+            <div class="header-title">
+                <h1>Task Planner</h1>
+                <p>Manage your tasks efficiently</p>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="stats-container">
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="total-tasks-count">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pending-tasks-count">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completed-tasks-count">0</p>
+            </div>
+        </section>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done?">
+                <input type="date" id="task-date">
+                <select id="task-category">
+                    <option value="Study">Study</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Exam">Exam</option>
+                </select>
+                <button id="add-task-btn"><i class="fas fa-plus"></i> Add</button>
+            </div>
+        </section>
+
+        <!-- Filters & Search -->
+        <section class="controls-section">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </section>
+
+        <!-- Task List -->
+        <section class="task-list-container">
+            <ul id="task-list">
+                <!-- Tasks will be injected here -->
+            </ul>
+        </section>
+    </div>
+    
+    <!-- Edit Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <input type="text" id="edit-task-input">
+            <input type="date" id="edit-task-date">
+            <select id="edit-task-category">
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+                <option value="Exam">Exam</option>
+            </select>
+            <div class="modal-actions">
+                <button id="save-edit-btn" class="btn-primary">Save</button>
+                <button id="cancel-edit-btn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
